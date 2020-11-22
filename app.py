@@ -4,10 +4,16 @@ import requests as rq
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/<string:string>")
 def weather(string):
-    URL = 'https://www.google.com/search?sxsrf=ALeKk00FRBP16pdTMTktV3Br2ENOZ1-FXA%3A1606056896061&ei=wHu6X5ysA4yP4-EPiKGbuAI&q='+string+'+weather&oq='+string+'+weather&gs_lcp=CgZwc3ktYWIQAzINCAAQsQMQyQMQRhCAAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoECCMQJzoECAAQQzoKCAAQsQMQgwEQQzoICAAQyQMQkQI6BQguELEDOggIABCxAxCDAToOCC4QsQMQgwEQxwEQowI6AgguOgUIABCxAzoLCC4QsQMQxwEQrwE6CggAELEDEMkDEEM6BQgAEJECOggILhDHARCvAToSCAAQsQMQyQMQFBCHAhBGEIACOgcIABAUEIcCOgQIABADUOG9Alio6wJg8_ECaABwAXgAgAHZCYgBnimSAQsyLTkuMi4yLjctMZgBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwicjJ2WtJbtAhWMxzgGHYjQBicQ4dUDCA0&uact=5'
+    URL = 'https://www.google.com/search?q='+string+' weather'
     page = rq.get(URL)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    results=soup.find('div', class_='BNeawe iBp4i AP7Wnd')
+    temp = results.text
+    result=soup.find('div', class_='BNeawe tAd8D AP7Wnd')
+    time = result.text
+    return temp+"\n"+time
 
-if __name == "__main__":
+if __name__ == "__main__":
     app.run(debug=True)
