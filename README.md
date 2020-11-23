@@ -14,3 +14,4 @@ weather api that tells about temperature
 
 ## How to get weather
 * For example i want weather of mumbai then i will type - http://deepprogrammer.pythonanywhere.com/mumbai
+* the app will return json object
