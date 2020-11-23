@@ -6,6 +6,6 @@ weather api that tells about temperature
 * Install requirements.txt
 * simply run app.py and your server will start
 
-## How to get weather of any state
+## How to get the weather of any state
 * your domain+"/"+query
 * where query is the name of the state
