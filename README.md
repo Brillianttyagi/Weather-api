@@ -9,3 +9,5 @@ weather api that tells about temperature
 ## How to get the weather of any state
 * your domain+"/"+query
 * where query is the name of the state
+
+## Visit at http://deepprogrammer.pythonanywhere.com/[http://deepprogrammer.pythonanywhere.com/mumbai] for demo of this app.
