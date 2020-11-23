@@ -10,4 +10,7 @@ weather api that tells about temperature
 * your domain+"/"+query
 * where query is the name of the state
 
-## Visit at http://deepprogrammer.pythonanywhere.com/[http://deepprogrammer.pythonanywhere.com/mumbai] for demo of this app.
+## Visit http://deepprogrammer.pythonanywhere.com/ for demo of this app.
+
+## How to get weather
+* For example i want weather of mumbai then i will type - http://deepprogrammer.pythonanywhere.com/mumbai
