@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,jsonify
 from bs4 import BeautifulSoup
 import requests as rq
 
@@ -13,7 +13,7 @@ def weather(string):
     temp = results.text
     result=soup.find('div', class_='BNeawe tAd8D AP7Wnd')
     time = result.text
-    return temp+"\n"+time
+    return jsonify(temperature = temp,time = time)
 
 if __name__ == "__main__":
     app.run(debug=True)
